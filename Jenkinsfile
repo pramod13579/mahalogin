@@ -1,5 +1,5 @@
 pipeline {
-    agent {label: "mob"}
+    agent {label "mob"}
     stages {
         stage ("Git clone") {
             steps {
