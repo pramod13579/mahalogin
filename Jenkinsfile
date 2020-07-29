@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label: "mob"}
     stages {
         stage ("Git clone") {
             steps {
@@ -20,7 +20,7 @@ pipeline {
                 }
             }
         }
-        stage ("Publish") {
+/*        stage ("Publish") {
             steps {
                     rtUpload (
                         serverId: 'myjfrog',
@@ -34,7 +34,7 @@ pipeline {
                         } '''
                     )
             }
-        }
+        }  */
         stage ("deploy") {
             steps {
                 script {
