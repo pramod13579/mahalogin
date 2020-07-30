@@ -9,7 +9,9 @@ pipeline {
         stage ("Build") {
             steps {
                 script {
-                    sh "mvn clean install"
+                    if ("$continue"=="true") {
+                        sh "mvn clean install"
+                    }   
                 }
             }
         }
