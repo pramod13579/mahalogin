@@ -9,8 +9,7 @@ pipeline {
         stage ("Build") {
             steps {
                 script {
-                    println "${continue}"
-                    if ("${continue}"==True) {
+                       if ("${params.continue}"==True) {
                         sh "mvn clean install"
                     }   
                 }
