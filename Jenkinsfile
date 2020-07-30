@@ -1,5 +1,5 @@
 pipeline {
-    agent {label "mob"}
+    agent any
     stages {
         stage ("Git clone") {
             steps {
@@ -9,6 +9,7 @@ pipeline {
         stage ("Build") {
             steps {
                 script {
+                    println "${continue}"
                     if ("${continue}"==True) {
                         sh "mvn clean install"
                     }   
